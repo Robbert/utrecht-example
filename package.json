@@ -1,0 +1,31 @@
+{
+	"name": "@utrecht/install-example",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"clean": "del dist",
+		"predeploy": "npm run clean",
+		"deploy": "make-dir dist && npm-run-all deploy:**",
+		"deploy:css": "cpy 'node_modules/@utrecht/component-library-css/dist/bem.css' dist/ --rename=component-library.css",
+		"deploy:design-tokens": "cpy 'node_modules/@utrecht/design-tokens/dist/theme/index.css' dist/ --rename=design-tokens.css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/Robbert/utrecht-install-example.git"
+	},
+	"author": "",
+	"license": "EUPL-1.2",
+	"bugs": {
+		"url": "https://github.com/Robbert/utrecht-install-example/issues"
+	},
+	"homepage": "https://github.com/Robbert/utrecht-install-example#readme",
+	"devDependencies": {
+		"@utrecht/component-library-css": "1.0.0-alpha.124",
+		"@utrecht/design-tokens": "1.0.0-alpha.117",
+		"cpy-cli": "3.1.1",
+		"del-cli": "4.0.1",
+		"make-dir-cli": "3.0.0",
+		"npm-run-all": "4.1.5"
+	}
+}
